@@ -24,11 +24,11 @@ class UserTestTest {
         userTestRepository.save(user);
     }
 
-    //@Test
-    //@DisplayName("테이블 수정 테스트")
-    //void userTestUpdate(){
-    //    UserTest jang = userTestRepository.findById(1L).orElse(null);
-    //    jang.setEmail("jang@b.c");
-    //    userTestRepository.save(jang);
-    //}
+    @Test
+    @DisplayName("테이블 수정 테스트")
+    void userTestUpdate(){
+        UserTest jang = userTestRepository.findById(1L).orElse(null);
+        jang.setEmail("jang@b.c");
+        userTestRepository.save(jang);
+    }
 }
