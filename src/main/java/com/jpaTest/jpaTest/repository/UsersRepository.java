@@ -32,4 +32,13 @@ public interface UsersRepository extends JpaRepository<Users,Long> {
      * select * from users where created_at >= yesterday
      * */
     List<Users> findByCreatedAtAfter(LocalDateTime searchDate);
+
+
+    /** 시작부터 끝 범위의 데이터 가져오기
+     * */
+    List<Users> findByCreatedAtBetween(LocalDateTime StartDay,LocalDateTime EndDay);
+
+    /** in 구문에는 List를 인자로 준다
+     * */
+    List<Users> findByLikeColorIn(List<String> colorList);
 }
