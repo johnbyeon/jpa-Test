@@ -42,4 +42,22 @@ class ContextServiceTest {
         System.out.println(a.equals(b));
         System.out.println(a_1.equals(b_1));
     }
+
+    @Test
+    @DisplayName("Transaction 쓰기지연 테스트")
+    void transactionTest(){
+        cs.transactionTest();
+    }
+
+    @Test
+    @DisplayName("Dirty Checking Test")
+    void dirtyChecking(){
+        cs.dirtyCheckingTest();
+    }
+
+    @Test
+    @DisplayName("삭제 테스트")
+    void deleteMember(){
+        cs.deleteMember();
+    }
 }
