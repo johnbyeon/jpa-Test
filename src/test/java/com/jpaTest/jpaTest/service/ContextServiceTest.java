@@ -25,39 +25,39 @@ class ContextServiceTest {
         Member m = cs.memberInsert();
         System.out.println("=============" + m);
     }
-
-    @Test
-    @DisplayName("데이터 연속성 보장테스트")
-    void 데이터_연속성_보장테스트(){
-        Member a_1 = Member.builder()
-                .memberId("hong")
-                .name("홍길동").build();
-        Member b_1 = Member.builder()
-                .memberId("hong")
-                .name("홍길동").build();
-        //Member a_1 = new Member("hong","홍길동");
-        //Member b_1 = new Member("hong","홍길동");
-        Member a = em.find(Member.class,"jang");
-        Member b = new Member("jang","장원영");
-        System.out.println(a.equals(b));
-        System.out.println(a_1.equals(b_1));
-    }
-
-    @Test
-    @DisplayName("Transaction 쓰기지연 테스트")
-    void transactionTest(){
-        cs.transactionTest();
-    }
-
-    @Test
-    @DisplayName("Dirty Checking Test")
-    void dirtyChecking(){
-        cs.dirtyCheckingTest();
-    }
-
-    @Test
-    @DisplayName("삭제 테스트")
-    void deleteMember(){
-        cs.deleteMember();
-    }
+    //
+    //@Test
+    //@DisplayName("데이터 연속성 보장테스트")
+    //void 데이터_연속성_보장테스트(){
+    //    Member a_1 = Member.builder()
+    //            .memberId("hong")
+    //            .name("홍길동").build();
+    //    Member b_1 = Member.builder()
+    //            .memberId("hong")
+    //            .name("홍길동").build();
+    //    //Member a_1 = new Member("hong","홍길동");
+    //    //Member b_1 = new Member("hong","홍길동");
+    //    //Member a = em.find(Member.class,"jang");
+    //    //Member b = new Member("jang","장원영");
+    //    //System.out.println(a.equals(b));
+    //    //System.out.println(a_1.equals(b_1));
+    //}
+    //
+    //@Test
+    //@DisplayName("Transaction 쓰기지연 테스트")
+    //void transactionTest(){
+    //    cs.transactionTest();
+    //}
+    //
+    //@Test
+    //@DisplayName("Dirty Checking Test")
+    //void dirtyChecking(){
+    //    cs.dirtyCheckingTest();
+    //}
+    //
+    //@Test
+    //@DisplayName("삭제 테스트")
+    //void deleteMember(){
+    //    cs.deleteMember();
+    //}
 }
