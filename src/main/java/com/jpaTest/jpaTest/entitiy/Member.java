@@ -4,16 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Member {
     @Id
     private String memberId;
@@ -23,4 +22,13 @@ public class Member {
     @ManyToOne
     @JoinColumn(name = "teamId")
     private Team team;
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "memberId='" + memberId + '\'' +
+                ", name='" + name + '\'' +
+                ", team=" + team.getTeamName() +
+                '}';
+    }
 }
