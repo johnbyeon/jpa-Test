@@ -1,6 +1,7 @@
 package com.jpaTest.jpaTest.service;
 
 import com.jpaTest.jpaTest.entitiy.Member;
+import com.jpaTest.jpaTest.entitiy.Parent;
 import com.jpaTest.jpaTest.entitiy.Team;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.DisplayName;
@@ -62,4 +63,17 @@ class RelationTestServiceTest {
             System.out.println(m.getName());
         }
     }
+
+    @Test
+    @DisplayName("부모와 자식 동시에 저장되는지 테스트")
+    void 부모_자식(){
+        releationTestService.saveChildren();
+    }
+
+    @Test
+    @DisplayName("부모삭제시 자식까지 삭제되는지 테스트")
+    void 부모삭제(){
+        releationTestService.removeParent();
+    }
+
 }
